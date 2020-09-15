@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SWS-Permit-Mockup-API/.vs/SWS-Permit-Mockup-API/DesignTimeBuild
+/SWS-Permit-Mockup-API/bin/Debug/netcoreapp3.1
+/SWS-Permit-Mockup-API/.vs
+/SWS-Permit-Mockup-API/obj
+/SWS-Permit-Mockup-API/SWS.Mockups.Permit.Api.v12.suo
