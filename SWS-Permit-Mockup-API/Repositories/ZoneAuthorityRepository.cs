@@ -36,10 +36,13 @@ namespace SWS.Mockups.Permit.Api.Repositories
                     PhoneNumber = "044050658",
                     PostOfficeBox = "1245",
                     PreQualificationStatus = "Active",
-                    Remarks = "",
+                     DedActivityCode="00",
+                      DedRemarks="",
+                       TaxRegistrationNumber="",
+                    PreQualificationRemarks = "",
                     Role = "Contractor",
-                    Status = "Active",
-                    TaxRegistrationnumber = ""
+                    Status = "Active"
+                    
                 },
                 Engineers = new List<ZoneUserModel>(),
                 Users = new List<ZoneUserModel> {
@@ -63,10 +66,13 @@ namespace SWS.Mockups.Permit.Api.Repositories
                     PhoneNumber = "044050658",
                     PostOfficeBox = "1245",
                     PreQualificationStatus = "Active",
-                    Remarks = "",
+                    DedRemarks = "",
+                     DedActivityCode="00",
+                      TaxRegistrationNumber="",
+                       PreQualificationRemarks="",
                     Role = "Consultant",
-                    Status = "Active",
-                    TaxRegistrationnumber = ""
+                    Status = "Active"
+                    
                 },
                 Engineers = new List<ZoneUserModel>(),
                 Users = new List<ZoneUserModel> {
@@ -92,10 +98,12 @@ namespace SWS.Mockups.Permit.Api.Repositories
                     PhoneNumber = "044050658",
                     PostOfficeBox = "1245",
                     PreQualificationStatus = "Blocked",
-                    Remarks = "",
+                    DedRemarks = "",
+                     DedActivityCode="00",
+                      PreQualificationRemarks="",
                     Role = "Consultant",
                     Status = "Active",
-                    TaxRegistrationnumber = ""
+                    TaxRegistrationNumber = ""
                 },
                 Engineers = new List<ZoneUserModel>(),
                 Users = new List<ZoneUserModel> {

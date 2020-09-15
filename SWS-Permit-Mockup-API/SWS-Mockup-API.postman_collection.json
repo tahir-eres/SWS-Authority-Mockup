@@ -1,0 +1,976 @@
+{
+	"info": {
+		"_postman_id": "51c8496b-d87b-435e-8b1c-76542dd0af24",
+		"name": "SWS-Mockup-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "zone-user-auth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2674/v1/users/contractor/784198419365130",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2674",
+					"path": [
+						"v1",
+						"users",
+						"contractor",
+						"784198419365130"
+					]
+				},
+				"description": "API: \tzone-authority-authorization\t\r\nBusiness Statement:\t\r\nUser will select Role for Login, after user is authenticated by UAE pass, SWS will pass role and emirates Id to each Zone Authority to check if they have records for given emirates Id for selected role.This API will return data bases on Active User and Active Company.\r\n\r\nRoles are : Contractor, Consultant, Owner\r\n\r\nAPI Publisher:\tDM, DDA, Trakhees\r\n\r\nAPI Consumer:\tSWS\r\n\r\nAPI Endpoint:\t GET <base-url>/users/{role-name}/{emirates-id}"
+			},
+			"response": [
+				{
+					"name": "zone-user-auth-failed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2674/v1/users/contractor/784198419365130",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"users",
+								"contractor",
+								"784198419365130"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:43:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 400,\n    \"responseMessage\": \"Emiartes Id not found for given role\",\n    \"timeStamp\": \"2020-09-15T16:43:12.2394295+04:00\",\n    \"validationErrorsList\": [\n        {\n            \"englishName\": \"Emiartes Id not found\",\n            \"arabicName\": \"Emiartes Id not found\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "zone-user-auth",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2674/v1/users/contractor/784198419365130",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"users",
+								"contractor",
+								"784198419365130"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:39:36 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"userId\": 3,\n        \"userName\": \"user1@sws.ae\",\n        \"status\": \"Active\",\n        \"role\": \"Admin\",\n        \"name\": {\n            \"englishName\": \"Abdul Rehman\",\n            \"arabicName\": \"Abdul Rehman\"\n        },\n        \"emiratesId\": \"784198419365130\",\n        \"mobileNumber\": \"00971557896523\",\n        \"emailAddress\": \"user1@sws.ae\",\n        \"birthDate\": \"1980-09-15T13:10:21.3644032+04:00\"\n    },\n    \"company\": {\n        \"name\": {\n            \"englishName\": \"ABC Contractor\",\n            \"arabicName\": \"ABC Contractor Arabic\"\n        },\n        \"role\": \"Contractor\",\n        \"licenceNumber\": \"ABCCONST\",\n        \"licenceAuthority\": \"DED\",\n        \"licenceExpiry\": \"2020-12-24T13:10:21.3630454+04:00\",\n        \"licenceIssuedOn\": \"2020-06-07T13:10:21.3633759+04:00\",\n        \"phoneNumber\": \"044050658\",\n        \"emailAddress\": \"contact@abcdevelopers.com\",\n        \"status\": \"Active\"\n    },\n    \"responseCode\": 200,\n    \"responseMessage\": \"SUCCESS\",\n    \"timeStamp\": \"2020-09-15T16:39:36.2219288+04:00\",\n    \"validationErrorsList\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "zone-company-auth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2674/v1/companies/ded/ABCCONST/contractor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2674",
+					"path": [
+						"v1",
+						"companies",
+						"ded",
+						"ABCCONST",
+						"contractor"
+					]
+				},
+				"description": "API Code:zone-authority-licence-check\r\n\r\nBusiness Statement:If authorization is failed to find emirates-id under given role, then SWS will pass licence number with role to check if licence is registered and active for given role. This will allow SWS to inform user to contact company admin.\r\n\r\nRoles are : Contractor, Consultant, Owner\r\n\r\nAPI Publisher:\tDM, DDA, Trakhees\r\n\r\nAPI Consumer:\tSWS\r\n\r\nAPI Endpoint:\tGET <base-url>/companies/{licence-authority}/{trade-licence}/{role-name}"
+			},
+			"response": [
+				{
+					"name": "zone-company-auth",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2674/v1/companies/ded/ABCCONST/contractor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"companies",
+								"ded",
+								"ABCCONST",
+								"contractor"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 09:37:07 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"company\": {\n        \"name\": {\n            \"englishName\": \"ABC Contractor\",\n            \"arabicName\": \"ABC Contractor Arabic\"\n        },\n        \"role\": \"Contractor\",\n        \"licenceNumber\": \"ABCCONST\",\n        \"licenceAuthority\": \"DED\",\n        \"licenceExpiry\": \"2020-12-24T13:10:21.3630454+04:00\",\n        \"licenceIssuedOn\": \"2020-06-07T13:10:21.3633759+04:00\",\n        \"phoneNumber\": \"044050658\",\n        \"emailAddress\": \"contact@abcdevelopers.com\",\n        \"status\": \"Active\"\n    },\n    \"responseCode\": 200,\n    \"responseMessage\": \"SUCCESS\",\n    \"timeStamp\": \"2020-09-15T13:37:07.0747019+04:00\",\n    \"validationErrorsList\": []\n}"
+				},
+				{
+					"name": "zone-company-auth-failed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2674/v1/companies/ded/ABCCONST/contractor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"companies",
+								"ded",
+								"ABCCONST",
+								"contractor"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:48:08 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 400,\n    \"responseMessage\": \"Trade License not found for given role\",\n    \"timeStamp\": \"2020-09-15T16:48:08.7426067+04:00\",\n    \"validationErrorsList\": [\n        {\n            \"englishName\": \"Trade License not found\",\n            \"arabicName\": \"Trade License not found\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "zone-company-users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2674",
+					"path": [
+						"v1",
+						"users",
+						"ded",
+						"ABCCONSL",
+						"consultant"
+					]
+				},
+				"description": "API Code:zone-authority-users-list\r\n\r\nBusiness Statement:After successful authentication from UAE pass and successful authorization from any zone authority. SWS will take users to Workspace. If user role in zone authority is Admin, then workspace will allow users to manage users under them. This API will return only Active Users.\r\n\r\nRoles are : Contractor, Consultant, Owner\r\n\r\nAPI Publisher:\tDM, DDA, Trakhees\r\n\r\nAPI Consumer:\tSWS\r\n\r\nAPI Endpoint:\tGET <base-url>/users/{licence-authority}/{trade-licence}/{role-name}\r\n\r\npossible User roles are: [ \"User\",\"Admin\",\"Viewer\"]"
+			},
+			"response": [
+				{
+					"name": "zone-company-users-failed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"users",
+								"ded",
+								"ABCCONSL",
+								"consultant"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:49:23 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 400,\n    \"responseMessage\": \"Trade License not found.\",\n    \"timeStamp\": \"2020-09-15T16:49:23.6314772+04:00\",\n    \"validationErrorsList\": [\n        {\n            \"englishName\": \"Trade License not found\",\n            \"arabicName\": \"Trade License not found\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "zone-company-users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"users",
+								"ded",
+								"ABCCONSL",
+								"consultant"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:40:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"users\": [\n        {\n            \"emiratesIdExpiresOn\": \"2023-09-15T13:10:21.3652881+04:00\",\n            \"gender\": \"Male\",\n            \"designation\": \"Engineer\",\n            \"postOfficeBox\": \"1234\",\n            \"nationality\": \"Egypt\",\n            \"passportNumber\": \"AP45899\",\n            \"passportIssuedOn\": \"2019-09-15T13:10:21.3652887+04:00\",\n            \"passportExpiresOn\": \"2025-09-15T13:10:21.3652884+04:00\",\n            \"passportCountry\": \"Egypt\",\n            \"userId\": 6,\n            \"userName\": \"user4@sws.ae\",\n            \"status\": \"Active\",\n            \"role\": \"Admin\",\n            \"name\": {\n                \"englishName\": \"Ejaz Khan\",\n                \"arabicName\": \"Ejaz Khan\"\n            },\n            \"emiratesId\": \"784198419365160\",\n            \"mobileNumber\": \"00971557896523\",\n            \"emailAddress\": \"user4@sws.ae\",\n            \"birthDate\": \"1980-09-15T13:10:21.3652877+04:00\"\n        },\n        {\n            \"emiratesIdExpiresOn\": \"2023-09-15T13:10:21.3652895+04:00\",\n            \"gender\": \"Male\",\n            \"designation\": \"Engineer\",\n            \"postOfficeBox\": \"1234\",\n            \"nationality\": \"Egypt\",\n            \"passportNumber\": \"AP45899\",\n            \"passportIssuedOn\": \"2019-09-15T13:10:21.3652899+04:00\",\n            \"passportExpiresOn\": \"2025-09-15T13:10:21.3652898+04:00\",\n            \"passportCountry\": \"Egypt\",\n            \"userId\": 7,\n            \"userName\": \"user5@sws.ae\",\n            \"status\": \"Active\",\n            \"role\": \"User\",\n            \"name\": {\n                \"englishName\": \"Usman Mudaser\",\n                \"arabicName\": \"Usman Mudaser\"\n            },\n            \"emiratesId\": \"784198419365170\",\n            \"mobileNumber\": \"00971557896523\",\n            \"emailAddress\": \"user5@sws.ae\",\n            \"birthDate\": \"1980-09-15T13:10:21.3652893+04:00\"\n        }\n    ],\n    \"responseCode\": 200,\n    \"responseMessage\": \"SUCCESS\",\n    \"timeStamp\": \"2020-09-15T16:40:12.9371268+04:00\",\n    \"validationErrorsList\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "zone-company-users-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user\":{\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 5,\r\n            \"userName\": \"user919@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Nawaz\",\r\n                \"arabicName\": \"Nawaz\"\r\n            },\r\n            \"emiratesId\": \"78419841936529\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user919@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\r\n        }\r\n\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2674",
+					"path": [
+						"v1",
+						"users",
+						"ded",
+						"ABCCONSL",
+						"consultant"
+					]
+				},
+				"description": "API Code:\tzone-authority—create-user\r\n\r\nBusiness Statement:\tSWS will allow admin users to create users from SWS user interface.\r\n\r\nRoles are : Contractor, Consultant, Owner\r\n\r\nAPI Publisher:\tDM, DDA, Trakhees\r\n\r\nAPI Consumer:\tSWS\r\n\r\nAPI Endpoint:\tPOST <base-url>/users/{licence-authority}/{trade-licence}/{role-name}\r\n\r\nAuthentication:\tAuthentication header"
+			},
+			"response": [
+				{
+					"name": "zone-company-users-create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"user\":{\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 5,\r\n            \"userName\": \"user919@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Nawaz\",\r\n                \"arabicName\": \"Nawaz\"\r\n            },\r\n            \"emiratesId\": \"78419841936529\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user919@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\r\n        }\r\n\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"users",
+								"ded",
+								"ABCCONSL",
+								"consultant"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:50:51 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\n        \"gender\": \"Male\",\n        \"designation\": \"Engineer\",\n        \"postOfficeBox\": \"1234\",\n        \"nationality\": \"Egypt\",\n        \"passportNumber\": \"AP45899\",\n        \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\n        \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\n        \"passportCountry\": \"Egypt\",\n        \"userId\": 13,\n        \"userName\": \"user919@sws.ae\",\n        \"status\": \"Active\",\n        \"role\": \"User\",\n        \"name\": {\n            \"englishName\": \"Nawaz\",\n            \"arabicName\": \"Nawaz\"\n        },\n        \"emiratesId\": \"78419841936529\",\n        \"mobileNumber\": \"00971557896523\",\n        \"emailAddress\": \"user919@sws.ae\",\n        \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\n    },\n    \"responseCode\": 200,\n    \"responseMessage\": \"SUCCESS\",\n    \"timeStamp\": \"2020-09-15T16:50:51.277702+04:00\",\n    \"validationErrorsList\": []\n}"
+				},
+				{
+					"name": "zone-company-users-create-failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"user\":{\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 5,\r\n            \"userName\": \"user99@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Nawaz\",\r\n                \"arabicName\": \"Nawaz\"\r\n            },\r\n            \"emiratesId\": \"78419841936420\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user99@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\r\n        }\r\n\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"users",
+								"ded",
+								"ABCCONSL",
+								"consultant"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:50:01 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 400,\n    \"responseMessage\": \"Emirates Id or Email is already exist.\",\n    \"timeStamp\": \"2020-09-15T16:50:01.6799044+04:00\",\n    \"validationErrorsList\": [\n        {\n            \"englishName\": \"Emirates Id or Email is already exist.\",\n            \"arabicName\": \"Emirates Id or Email is already exist.\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "zone-company-register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company\": {\r\n        \"postOfficeBox\": \"1245\",\r\n        \"preQualificationStatus\": \"Active\",\r\n        \"taxRegistrationNumber\": \"\",\r\n        \"officeAddress\": \"Dubai UAE\",\r\n        \"dedActivityCode\":\"000\",\r\n        \"preQualificationRemarks\":\"some text\",\r\n        \"dedRemarks\":\"some text\",\r\n        \"contactPersonName\": {\r\n            \"englishName\": \"Sohrab Hussain\",\r\n            \"arabicName\": \"Sohrab Hussain Arabic\"\r\n        },\r\n        \"name\": {\r\n            \"englishName\": \"XYZ Contractors\",\r\n            \"arabicName\": \"XYZ Constructors Arabic\"\r\n        },\r\n        \"role\": \"Contractor\",\r\n        \"licenceNumber\": \"XYZCONST\",\r\n        \"licenceAuthority\": \"DED\",\r\n        \"licenceExpiry\": \"2020-12-19T15:52:27.533885+04:00\",\r\n        \"licenceIssuedOn\": \"2020-06-02T15:52:27.5339026+04:00\",\r\n        \"phoneNumber\": \"044050658\",\r\n        \"emailAddress\": \"contact@abcdevelopers.com\",\r\n        \"status\": \"Active\"\r\n    },\r\n    \"engineers\": [\r\n        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:52:27.5340096+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:52:27.5340269+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:52:27.5340188+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 1,\r\n            \"userName\": \"user8@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"Admin\",\r\n            \"name\": {\r\n                \"englishName\": \"Sohrab Hussain\",\r\n                \"arabicName\": \"Sohrab Hussain\"\r\n            },\r\n            \"emiratesId\": \"78419841936520\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user8@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:52:27.5339943+04:00\"\r\n        },\r\n        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:52:27.5340528+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:52:27.534073+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:52:27.5340653+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 2,\r\n            \"userName\": \"user9@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Zulfiqar Ali\",\r\n                \"arabicName\": \"Zulfiqar Ali\"\r\n            },\r\n            \"emiratesId\": \"78419841936521\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user9@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:52:27.5340441+04:00\"\r\n        }\r\n    ],\r\n\"admin\":        {\r\n             \"emiratesIdExpiresOn\": \"2023-09-10T15:52:27.5340096+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:52:27.5340269+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:52:27.5340188+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 1,\r\n            \"userName\": \"user8@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"Admin\",\r\n            \"name\": {\r\n                \"englishName\": \"Sohrab Hussain\",\r\n                \"arabicName\": \"Sohrab Hussain\"\r\n            },\r\n            \"emiratesId\": \"78419841936520\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user8@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:52:27.5339943+04:00\"\r\n        }\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2674/v1/companies/contractor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2674",
+					"path": [
+						"v1",
+						"companies",
+						"contractor"
+					]
+				},
+				"description": "API Code:zone-authority-register-company\r\n\r\nBusiness Statement:\tIn case of trade licence is not listed in zone authority system, SWS will allow user to initiate registration request from SWS User Interface.\r\n\r\nRoles are: Contractor, Consultant, Owner\r\n\r\nAPI Publisher:\tDM, DDA, Trakhees\r\n\r\nAPI Consumer:\tSWS\r\n\r\nAPI Endpoint:\tPOST <base-url>/companies/{role-name}\r\n\r\nAuthentication:\tAuthentication header"
+			},
+			"response": [
+				{
+					"name": "zone-company-register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": {\r\n        \"postOfficeBox\": \"1245\",\r\n        \"preQualificationStatus\": \"Active\",\r\n        \"taxRegistrationnumber\": \"\",\r\n        \"officeAddress\": \"Dubai UAE\",\r\n        \"remarks\": \"\",\r\n        \"contactPersonName\": {\r\n            \"englishName\": \"Sohrab Hussain\",\r\n            \"arabicName\": \"Sohrab Hussain Arabic\"\r\n        },\r\n        \"name\": {\r\n            \"englishName\": \"XYZ Contractors\",\r\n            \"arabicName\": \"XYZ Constructors Arabic\"\r\n        },\r\n        \"role\": \"Contractor\",\r\n        \"licenceNumber\": \"XYZCONST\",\r\n        \"licenceAuthority\": \"DED\",\r\n        \"licenceExpiry\": \"2020-12-19T15:52:27.533885+04:00\",\r\n        \"licenceIssuedOn\": \"2020-06-02T15:52:27.5339026+04:00\",\r\n        \"phoneNumber\": \"044050658\",\r\n        \"emailAddress\": \"contact@abcdevelopers.com\",\r\n        \"status\": \"Active\"\r\n    },\r\n    \"engineers\": [\r\n        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:52:27.5340096+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:52:27.5340269+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:52:27.5340188+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 1,\r\n            \"userName\": \"user8@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"Admin\",\r\n            \"name\": {\r\n                \"englishName\": \"Sohrab Hussain\",\r\n                \"arabicName\": \"Sohrab Hussain\"\r\n            },\r\n            \"emiratesId\": \"78419841936520\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user8@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:52:27.5339943+04:00\"\r\n        },\r\n        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:52:27.5340528+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:52:27.534073+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:52:27.5340653+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 2,\r\n            \"userName\": \"user9@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Zulfiqar Ali\",\r\n                \"arabicName\": \"Zulfiqar Ali\"\r\n            },\r\n            \"emiratesId\": \"78419841936521\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user9@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:52:27.5340441+04:00\"\r\n        }\r\n    ],\r\n\"admin\":        {\r\n             \"emiratesIdExpiresOn\": \"2023-09-10T15:52:27.5340096+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:52:27.5340269+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:52:27.5340188+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 1,\r\n            \"userName\": \"user8@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"Admin\",\r\n            \"name\": {\r\n                \"englishName\": \"Sohrab Hussain\",\r\n                \"arabicName\": \"Sohrab Hussain\"\r\n            },\r\n            \"emiratesId\": \"78419841936520\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user8@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:52:27.5339943+04:00\"\r\n        }\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2674/v1/companies/contractor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"companies",
+								"contractor"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:52:25 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"company\": {\n        \"name\": {\n            \"englishName\": \"XYZ Contractors\",\n            \"arabicName\": \"XYZ Constructors Arabic\"\n        },\n        \"role\": \"Contractor\",\n        \"licenceNumber\": \"XYZCONST\",\n        \"licenceAuthority\": \"DED\",\n        \"licenceExpiry\": \"2020-12-19T15:52:27.533885+04:00\",\n        \"licenceIssuedOn\": \"2020-06-02T15:52:27.5339026+04:00\",\n        \"phoneNumber\": \"044050658\",\n        \"emailAddress\": \"contact@abcdevelopers.com\",\n        \"status\": \"Active\"\n    },\n    \"requestTrackingNumber\": \"contractor-XYZCONST\",\n    \"responseCode\": 200,\n    \"responseMessage\": \"SUCCESS\",\n    \"timeStamp\": \"2020-09-15T16:52:25.6586651+04:00\",\n    \"validationErrorsList\": []\n}"
+				},
+				{
+					"name": "zone-company-register-failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": {\r\n        \"postOfficeBox\": \"1245\",\r\n        \"preQualificationStatus\": \"Active\",\r\n        \"taxRegistrationnumber\": \"\",\r\n        \"officeAddress\": \"Dubai UAE\",\r\n        \"remarks\": \"\",\r\n        \"contactPersonName\": {\r\n            \"englishName\": \"Sohrab Hussain\",\r\n            \"arabicName\": \"Sohrab Hussain Arabic\"\r\n        },\r\n        \"name\": {\r\n            \"englishName\": \"XYZ Contractors\",\r\n            \"arabicName\": \"XYZ Constructors Arabic\"\r\n        },\r\n        \"role\": \"Contractor\",\r\n        \"licenceNumber\": \"XYZCONST\",\r\n        \"licenceAuthority\": \"DED\",\r\n        \"licenceExpiry\": \"2020-12-19T15:52:27.533885+04:00\",\r\n        \"licenceIssuedOn\": \"2020-06-02T15:52:27.5339026+04:00\",\r\n        \"phoneNumber\": \"044050658\",\r\n        \"emailAddress\": \"contact@abcdevelopers.com\",\r\n        \"status\": \"Active\"\r\n    },\r\n    \"engineers\": [\r\n        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:52:27.5340096+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:52:27.5340269+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:52:27.5340188+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 1,\r\n            \"userName\": \"user8@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"Admin\",\r\n            \"name\": {\r\n                \"englishName\": \"Sohrab Hussain\",\r\n                \"arabicName\": \"Sohrab Hussain\"\r\n            },\r\n            \"emiratesId\": \"78419841936520\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user8@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:52:27.5339943+04:00\"\r\n        },\r\n        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:52:27.5340528+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:52:27.534073+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:52:27.5340653+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 2,\r\n            \"userName\": \"user9@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Zulfiqar Ali\",\r\n                \"arabicName\": \"Zulfiqar Ali\"\r\n            },\r\n            \"emiratesId\": \"78419841936521\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user9@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:52:27.5340441+04:00\"\r\n        }\r\n    ],\r\n\"admin\":        {\r\n             \"emiratesIdExpiresOn\": \"2023-09-10T15:52:27.5340096+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:52:27.5340269+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:52:27.5340188+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 1,\r\n            \"userName\": \"user8@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"Admin\",\r\n            \"name\": {\r\n                \"englishName\": \"Sohrab Hussain\",\r\n                \"arabicName\": \"Sohrab Hussain\"\r\n            },\r\n            \"emiratesId\": \"78419841936520\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user8@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:52:27.5339943+04:00\"\r\n        }\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2674/v1/companies/contractor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"companies",
+								"contractor"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:52:35 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 400,\n    \"responseMessage\": \"Trade license is already exist.\",\n    \"timeStamp\": \"2020-09-15T16:52:35.9463693+04:00\",\n    \"validationErrorsList\": [\n        {\n            \"englishName\": \"Trade license is already exist.\",\n            \"arabicName\": \"Trade license is already exist.\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "zone-company-users-update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user\":        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 12,\r\n            \"userName\": \"user99@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Nawaz updated\",\r\n                \"arabicName\": \"Nawaz\"\r\n            },\r\n            \"emiratesId\": \"78419841936529\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user99@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\r\n        }\r\n\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant/78419841936529",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2674",
+					"path": [
+						"v1",
+						"users",
+						"ded",
+						"ABCCONSL",
+						"consultant",
+						"78419841936529"
+					]
+				},
+				"description": "API Code:\tzone-authority—update-user\r\n\r\nBusiness Statement:\tSWS will allow admin users to update users from SWS user interface.\r\n\r\nRoles are : Contractor, Consultant, Owner\r\n\r\nAPI Publisher:\tDM, DDA, Trakhees\r\n\r\nAPI Consumer:\tSWS\r\n\r\nAPI Endpoint:\tPUT <Base-API>users/{licence-authority}/{trade-licence}/{role-name}/{emirates-id}\r\n\r\nAuthentication\tAuthentication header"
+			},
+			"response": [
+				{
+					"name": "zone-company-users-update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"user\":        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 12,\r\n            \"userName\": \"user99@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Nawaz updated\",\r\n                \"arabicName\": \"Nawaz\"\r\n            },\r\n            \"emiratesId\": \"78419841936420\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user99@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\r\n        }\r\n\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant/78419841936420",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"users",
+								"ded",
+								"ABCCONSL",
+								"consultant",
+								"78419841936420"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:54:33 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\n        \"gender\": \"Male\",\n        \"designation\": \"Engineer\",\n        \"postOfficeBox\": \"1234\",\n        \"nationality\": \"Egypt\",\n        \"passportNumber\": \"AP45899\",\n        \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\n        \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\n        \"passportCountry\": \"Egypt\",\n        \"userId\": 12,\n        \"userName\": \"user99@sws.ae\",\n        \"status\": \"Active\",\n        \"role\": \"User\",\n        \"name\": {\n            \"englishName\": \"Nawaz updated\",\n            \"arabicName\": \"Nawaz\"\n        },\n        \"emiratesId\": \"78419841936420\",\n        \"mobileNumber\": \"00971557896523\",\n        \"emailAddress\": \"user99@sws.ae\",\n        \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\n    },\n    \"responseCode\": 200,\n    \"responseMessage\": \"SUCCESS\",\n    \"timeStamp\": \"2020-09-15T16:54:33.7601143+04:00\",\n    \"validationErrorsList\": []\n}"
+				},
+				{
+					"name": "zone-company-users-update-failed",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"user\":        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 12,\r\n            \"userName\": \"user99@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Nawaz updated\",\r\n                \"arabicName\": \"Nawaz\"\r\n            },\r\n            \"emiratesId\": \"784198419364880\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user99@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\r\n        }\r\n\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant/788419881936480",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"users",
+								"ded",
+								"ABCCONSL",
+								"consultant",
+								"788419881936480"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 12:58:43 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 400,\n    \"responseMessage\": \"Emirates Id is not exist.\",\n    \"timeStamp\": \"2020-09-15T16:58:43.3784969+04:00\",\n    \"validationErrorsList\": [\n        {\n            \"englishName\": \"Emirates Id is not exist.\",\n            \"arabicName\": \"Emirates Id is not exist.\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "zone-company-users-delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user\":        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 12,\r\n            \"userName\": \"user99@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Nawaz updated\",\r\n                \"arabicName\": \"Nawaz\"\r\n            },\r\n            \"emiratesId\": \"78419841936420\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user99@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\r\n        }\r\n\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant/78419841936529",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2674",
+					"path": [
+						"v1",
+						"users",
+						"ded",
+						"ABCCONSL",
+						"consultant",
+						"78419841936529"
+					]
+				},
+				"description": "API Code: zone-authority—delete-user\r\n\r\nBusiness Statement:\tSWS will allow admin users to delete users from SWS user interface.\r\n\r\nRoles are : Contractor, Consultant, Owner\r\n\r\nAPI Publisher:\tDM, DDA, Trakhees\r\n\r\nAPI Consumer:\tSWS\r\n\r\nAPI Endpoint:\tDELETE <base-url>/users/{licence-authority}/{trade-licence}/{role-name}/{emirates-id}\r\n\r\nAuthentication\tAuthentication header"
+			},
+			"response": [
+				{
+					"name": "zone-company-users-delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"user\":        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 12,\r\n            \"userName\": \"user99@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Nawaz updated\",\r\n                \"arabicName\": \"Nawaz\"\r\n            },\r\n            \"emiratesId\": \"78419841936420\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user99@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\r\n        }\r\n\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2674/v1/users/ded/ABCCONSL/consultant/78419841936529",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"users",
+								"ded",
+								"ABCCONSL",
+								"consultant",
+								"78419841936529"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 13:02:33 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "712"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\n        \"gender\": \"Male\",\n        \"designation\": \"Engineer\",\n        \"postOfficeBox\": \"1234\",\n        \"nationality\": \"Egypt\",\n        \"passportNumber\": \"AP45899\",\n        \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\n        \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\n        \"passportCountry\": \"Egypt\",\n        \"userId\": 12,\n        \"userName\": \"user919@sws.ae\",\n        \"status\": \"Delete\",\n        \"role\": \"User\",\n        \"name\": {\n            \"englishName\": \"Nawaz updated\",\n            \"arabicName\": \"Nawaz\"\n        },\n        \"emiratesId\": \"78419841936529\",\n        \"mobileNumber\": \"00971557896523\",\n        \"emailAddress\": \"user99@sws.ae\",\n        \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\n    },\n    \"responseCode\": 200,\n    \"responseMessage\": \"SUCCESS\",\n    \"timeStamp\": \"2020-09-15T17:02:33.4123475+04:00\",\n    \"validationErrorsList\": []\n}"
+				},
+				{
+					"name": "zone-company-users-delete-failed",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"user\":        {\r\n            \"emiratesIdExpiresOn\": \"2023-09-10T15:29:30.0461073+04:00\",\r\n            \"gender\": \"Male\",\r\n            \"designation\": \"Engineer\",\r\n            \"postOfficeBox\": \"1234\",\r\n            \"nationality\": \"Egypt\",\r\n            \"passportNumber\": \"AP45899\",\r\n            \"passportIssuedOn\": \"2019-09-10T15:29:30.0461092+04:00\",\r\n            \"passportExpiresOn\": \"2025-09-10T15:29:30.0461086+04:00\",\r\n            \"passportCountry\": \"Egypt\",\r\n            \"userId\": 12,\r\n            \"userName\": \"user99@sws.ae\",\r\n            \"status\": \"Active\",\r\n            \"role\": \"User\",\r\n            \"name\": {\r\n                \"englishName\": \"Nawaz updated\",\r\n                \"arabicName\": \"Nawaz\"\r\n            },\r\n            \"emiratesId\": \"78419841936420\",\r\n            \"mobileNumber\": \"00971557896523\",\r\n            \"emailAddress\": \"user99@sws.ae\",\r\n            \"birthDate\": \"1980-09-10T15:29:30.0461048+04:00\"\r\n        }\r\n\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:2674/v1/users/ded/ABCCONST/contractor/78419841936420",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2674",
+							"path": [
+								"v1",
+								"users",
+								"ded",
+								"ABCCONST",
+								"contractor",
+								"78419841936420"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Sep 2020 13:02:00 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": 400,\n    \"responseMessage\": \"Emirates Id is not exist.\",\n    \"timeStamp\": \"2020-09-15T17:02:00.9809203+04:00\",\n    \"validationErrorsList\": [\n        {\n            \"englishName\": \"Emirates Id is not exist.\",\n            \"arabicName\": \"Emirates Id is not exist.\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
